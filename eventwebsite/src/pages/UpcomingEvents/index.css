@@ -1,0 +1,243 @@
+html, body{
+  padding: 0;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.upcoming-events-bg-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  padding-left: 10rem;
+  margin-top: 30vh;
+}
+.upcoming-events-title-holder{
+  display: flex;
+  align-items: center;
+  height: 2vh;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+/* Spinner while fetching next pages */
+.loader-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+}
+
+/* Spinner for first load */
+.initial-loader-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  width: 100%;
+}
+
+.upcoming-events-scroll-container {
+  height: 50vh;
+  overflow-y: auto;
+  padding: 0;
+  border: 1px solid #ccc;
+  scroll-behavior: smooth;
+  border: none;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE/Edge */
+  width: 100%;
+  margin-top: 1rem;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+}
+
+.upcoming-events-scroll-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.upcoming-events-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /*gap:1rem*/
+  width: 100%;
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+.upcomming-events-title{
+  font-size: 2rem;
+  line-height: 3rem;
+  color: #000000;
+  font-weight: bold;
+}
+.right-icon{
+  color: #000000;
+  font-size: 2rem;
+  margin-left: 0.5rem;
+  font-weight: bold;
+}
+
+.end-message{
+  font-size: 0.7rem;
+  color: #000000;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.error-message{
+  font-size: 0.7rem;
+  color: #000000;
+  text-align: center;
+  margin-top: 2rem;
+}
+@media screen and (min-width: 1550px) and (max-width: 1770px){
+  .upcoming-events-bg-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  padding-left: 10rem;
+  margin-top: 38vh;
+}
+.upcoming-events-title-holder{
+  display: flex;
+  align-items: center;
+  height: 3vh;
+  width: 100%;
+  margin-top: 2rem;
+}
+.upcoming-events-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+}
+.upcomming-events-title{
+  font-size: 2rem;
+  line-height: 3rem;
+  color: #000000;
+  font-weight: bold;
+}
+.right-icon{
+  color: #000000;
+  font-size: 2rem;
+  margin-left: 0.5rem;
+  font-weight: bold;
+}
+}
+
+@media screen and (min-width: 992px) and (max-width: 1550px){
+    .upcoming-events-bg-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  padding-left: 10rem;
+  margin-top: 34vh;
+}
+.upcoming-events-title-holder{
+  display: flex;
+  align-items: center;
+  height: 3vh;
+  width: 100%;
+  margin-top: 2rem;
+}
+.upcoming-events-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  width: 100%;
+}
+.upcomming-events-title{
+  font-size: 2rem;
+  line-height: 3rem;
+  color: #000000;
+  font-weight: bold;
+}
+.right-icon{
+  color: #000000;
+  font-size: 2rem;
+  margin-left: 0.5rem;
+  font-weight: bold;
+}
+}
+@media screen and (min-width: 768px) and (max-width: 992px){
+    .upcoming-events-bg-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  padding-left: 4rem;
+  margin-top: 35vh;
+}
+.upcomming-events-title{
+  font-size: 1.8rem;
+  line-height: 3.5rem;
+}
+.right-icon{
+  font-size: 2rem;
+  margin-left: 0.3rem;
+}
+}
+@media screen and (min-width: 576px) and (max-width: 768px){
+    .upcoming-events-bg-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  padding-left: 1rem;
+  margin-top: 32vh;
+}
+.upcomming-events-title{
+  font-size: 1.8rem;
+  line-height: 3.5rem;
+}
+.right-icon{
+  font-size: 1.8rem;
+  margin-left: 0.5rem;
+}
+}
+
+@media screen and (min-width: 400px) and (max-width: 576px){
+    .upcoming-events-bg-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  padding-left: 1rem;
+  margin-top: 32vh;
+}
+.upcomming-events-title{
+  font-size: 1.8rem;
+  line-height: 3.5rem;
+}
+.right-icon{
+  font-size: 1.8rem;
+  margin-left: 0.3rem;
+}
+}
+@media screen and (min-width: 250px) and (max-width: 400px){
+    .upcoming-events-bg-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  padding-left: 0.5rem;
+  margin-top: 29vh;
+}
+.upcomming-events-title{
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.right-icon{
+  font-size: 1rem;
+  margin-left: 0.2rem;
+}
+}
