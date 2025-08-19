@@ -1,0 +1,22 @@
+{
+  "name": "mern-app",
+  "version": "1.0.0",
+  "description": "MERN Stack Application",
+  "main": "backend/server.js",
+  "scripts": {
+    "build": "cd eventwebsite && npm install && npm run build",
+    "start": "node backend/server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && npm run dev",
+    "client": "cd eventwebsite && npm start",
+    "install-client": "cd eventwebsite && npm install",
+    "install-server": "cd backend && npm install",
+    "install-all": "npm run install-server && npm run install-client"
+  },
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

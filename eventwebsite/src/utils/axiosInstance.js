@@ -1,22 +1,27 @@
 // Import Axios library for making HTTP requests
 import axios from 'axios';
 
-// Create a custom Axios instance with a default base URL
-// This avoids repeating the base URL in every request
+// Dynamic base URL that works for both development and production
+const API_BASE_URL = process.env.NODE_ENV === 'production' 
+  ? ''  // Vercel will handle routing
+  : 'http://localhost:5500';  // Note: changed port to 5500 to match your backend
+
+// Create a custom Axios instance with a dynamic base URL
 const axiosInstance = axios.create({
-  baseURL: 'http://localhost:5500', // Change this to your API's base URL in production
+  baseURL: API_BASE_URL,
+  withCredentials: true, // Important: enables cookies for authentication
 });
 
 // Add a request interceptor to attach the token to every request
 axiosInstance.interceptors.request.use((config) => {
-  // Retrieve JWT token from localStorage (or cookies if you prefer)
+  // Retrieve JWT token from localStorage
   const token = localStorage.getItem('token');
-
+  
   // If token exists, add it to the Authorization header
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
-
+  
   // Always return the modified config so the request proceeds
   return config;
 });

@@ -6,9 +6,13 @@ const express = require('express');
 const app = express();
 
 const cors = require('cors');
+
+
 app.use(cors({
-  origin: 'http://localhost:3000',  // React frontend
-  credentials: true                 // to allow sending cookies
+    origin: process.env.NODE_ENV === 'production' 
+        ? process.env.FRONTEND_URL || true  // Will be set in Vercel
+        : 'http://localhost:3000',
+    credentials: true
 }));
 
 

@@ -13,6 +13,9 @@ const dbURL = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@cluster0.hh0pcez.mongodb.
 
 
 // Establish connection to MongoDB using mongoose
-mongoose.connect(dbURL)
+mongoose.connect(dbURL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
   .then(() => console.log("MongoDB connection successful")) // Log success message if connected
   .catch(err => console.log("MongoDB connection error:", err)); // Catch and log any connection errors

@@ -29,21 +29,19 @@ const Signup = () => {
 
     // Handle form submission
     const handleSubmit = async (event) => {
-        event.preventDefault(); // Prevent page reload on form submit
-        try {
-            // Send POST request to signup API
-            const res = await axiosInstance.post('users/auth/signup', formData);
-            
-            // If signup is successful
-            if (res.data.status === 'success') {
-                toast.success('SignUp successful'); // Show success message
-                navigate('/login'); // Redirect to login page
-            } 
-        } catch (err) {
-            // Log error and show message to user
-            console.error('Signup error:', err);
-            alert(err.response?.data?.message || 'Signup failed');
-        }
+        event.preventDefault();
+    try {
+        // Fixed: Added leading slash to the endpoint
+        const res = await axiosInstance.post('/users/auth/signup', formData);
+        
+        if (res.data.status === 'success') {
+            toast.success('SignUp successful');
+            navigate('/login');
+        } 
+    } catch (err) {
+        console.error('Signup error:', err);
+        alert(err.response?.data?.message || 'Signup failed');
+    }
     }
 
     return (

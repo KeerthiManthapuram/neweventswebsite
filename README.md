@@ -58,7 +58,7 @@ event-website/
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/your-username/responsive-event-website.git
+git clone https://github.com/KeerthiManthapuram/neweventswebsite.git
 cd responsive-event-website
 
 2️⃣ Backend Setup
